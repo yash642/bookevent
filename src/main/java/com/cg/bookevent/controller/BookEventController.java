@@ -16,6 +16,11 @@ import com.cg.bookevent.exception.BookEventNotFoundException;
 import com.cg.bookevent.exception.EmptyListException;
 import com.cg.bookevent.exception.NullEventException;
 import com.cg.bookevent.service.BookEventService;
+import java.io.IOException;
+import java.util.List;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 
 import io.swagger.annotations.Api;
 
@@ -53,5 +58,22 @@ public class BookEventController {
 		bookService.deleteEvent(id);
 
 	}
+	
+		@PostMapping(value = "/getbookings")
+	public List<BookEvent> listAllBookedEventsbasedCustomer(@RequestBody Customer cust) throws EmptyListException {
+		return bookService.listBookedEventsbasedcustomers(cust);
+
+	}
+	
+		@GetMapping("/downloadstatement/{id}")
+	public void downloadstatement(@PathVariable("id") Integer id) throws IOException {
+		bookService.export(id);
+	}
+
+	@PostMapping(value = "/getprice")
+	public double calculatePrice(@RequestBody BookEvent event) {
+		return this.bookService.calculateAmount(event);
+	}
+
 
 }
