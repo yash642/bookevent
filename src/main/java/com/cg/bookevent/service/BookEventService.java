@@ -10,16 +10,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,10 +21,6 @@ import com.cg.bookevent.entity.Participant;
 import com.cg.bookevent.exception.BookEventNotFoundException;
 import com.cg.bookevent.exception.EmptyListException;
 import com.cg.bookevent.exception.NullEventException;
-import com.twilio.Twilio;
-import com.twilio.type.PhoneNumber;
-
-
 
 @Service
 public class BookEventService {
