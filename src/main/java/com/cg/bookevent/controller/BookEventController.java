@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.cg.bookevent.entity.Customer;
 import com.cg.bookevent.entity.BookEvent;
 import com.cg.bookevent.exception.BookEventNotFoundException;
 import com.cg.bookevent.exception.EmptyListException;
@@ -18,9 +18,6 @@ import com.cg.bookevent.exception.NullEventException;
 import com.cg.bookevent.service.BookEventService;
 import java.io.IOException;
 import java.util.List;
-
-import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
 
 import io.swagger.annotations.Api;
 
